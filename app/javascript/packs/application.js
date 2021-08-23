@@ -13,7 +13,8 @@ require("local-time").start()
 
 // Start Rails UJS
 Rails.start()
-
+import $ from 'jquery';
+console.log($);
 // Stimulus
 import "controllers"
 

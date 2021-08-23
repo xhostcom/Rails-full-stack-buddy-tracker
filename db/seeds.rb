@@ -1,10 +1,7 @@
-10.times do |index|
-user = User.new(
-    :first_name => "Random",
-    :last_name => "User",
-    :username => "#{first_name} #{last_name}",
-    :email => "#{first_name}.#{num}@localtinkers.com",
-    :password => '12341234'
-  )
-  u.save!(:validate => false)
-end
+# This file should contain all the record creation needed to seed the database with its default values.
+# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
+#
+# Examples:
+#
+#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
+#   Character.create(name: 'Luke', movie: movies.first)

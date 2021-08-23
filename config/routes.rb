@@ -1,6 +1,9 @@
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
+  get 'browse/browse'
+  get 'browse/approve'
+  get 'browse/decline'
   get '/privacy', to: 'home#privacy'
   get '/terms', to: 'home#terms'
 authenticate :user, lambda { |u| u.admin? } do
@@ -9,7 +12,7 @@ authenticate :user, lambda { |u| u.admin? } do
   namespace :madmin do
   end
 end
-
+  get "/browse" => "browse#browse", as: :browse
   resources :notifications, only: [:index]
   resources :announcements, only: [:index]
   devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }

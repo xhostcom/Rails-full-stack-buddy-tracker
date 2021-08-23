@@ -15,12 +15,17 @@
 
     <div class="collapse navbar-collapse" id="navbarMain">
       <ul class="navbar-nav me-auto mt-2 mt-md-0">
+         <li class="nav-item"><%= link_to "Features", root_path, class: "nav-link" %></li>
+         <li class="nav-item"><%= link_to "Pricing", root_path, class: "nav-link" %></li>
+         <li class="nav-item"><%= link_to "Support", root_path, class: "nav-link" %></li>
       </ul>
 
       <ul class="navbar-nav">
-        <li class="nav-item"><%= link_to "What's New", announcements_path, class: "nav-link #{unread_announcements(current_user)}" %></li>
+      
         <% if user_signed_in? %>
-
+          <li class="nav-item"><%= link_to "What's New", announcements_path, class: "nav-link #{unread_announcements(current_user)}" %></li>
+           <li class="nav-item"><%= link_to "Browse", browse_path, class: "nav-link" %></li>
+               <li class="nav-item"><%= link_to "My Matches", root_path, class: "nav-link" %></li>
         <li class="nav-item">
           <%= link_to notifications_path, class: "nav-link" do %>
             <span><i class="far fa-bell" aria-hidden="true"></i></span>

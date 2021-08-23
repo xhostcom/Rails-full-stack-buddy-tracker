@@ -21,10 +21,6 @@ gem 'jbuilder', '~> 2.7'
 gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
-# Use Active Storage variant
-# gem 'image_processing', '~> 1.2'
-
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 
@@ -52,7 +48,7 @@ group :test do
   gem 'webdrivers'
 end
 
-
+gem 'aws-sdk-s3', require: false
 gem 'bootstrap', '5.0.0'
 gem 'devise', '~> 4.8', '>= 4.8.0'
 gem 'devise_masquerade', '~> 1.3'

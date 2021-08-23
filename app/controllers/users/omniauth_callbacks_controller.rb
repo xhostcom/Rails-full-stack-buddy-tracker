@@ -2,6 +2,7 @@ module Users
   class OmniauthCallbacksController < Devise::OmniauthCallbacksController
     before_action :set_service
     before_action :set_user
+    before_action :set_username
 
     attr_reader :service, :user
 
@@ -71,7 +72,7 @@ module Users
     def create_user
       User.create(
         email: auth.info.email,
-        #name: auth.info.name,
+        username: auth.info.username,
         password: Devise.friendly_token[0,20]
       )
     end

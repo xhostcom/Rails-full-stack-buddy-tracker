@@ -56,12 +56,15 @@
               </div>
               <span class="flex-grow-1"></span>
               <div class="card-action">
-                <button class="btn btn-lg btn-raised btn-raised-primary">Sign Up</button>
+                <button class="btn btn-sm btn-raised btn-raised-primary"><%= link_to "Sign Up", new_user_registration_path, class: "nav-link" %></button>
               </div>
             </div>
           </div>
-          <div class="col-12 mb-md">
-             <img class="card-img px-lg mb-md" src="assets/banner.jpg" alt="">
+          <div class="jumbotron">
+            <div class="col-12 mb-md text-center">
+              <%= link_to image_tag('logo_small.png'), root_path, class: "navbar-brand" %>
+              <p class="lead">The World Finest Matchmaking App</p>
+            </div>
           </div>
         </div>
       </div>

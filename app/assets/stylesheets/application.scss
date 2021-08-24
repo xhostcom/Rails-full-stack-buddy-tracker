@@ -15,12 +15,14 @@
     margin-right: 0;
   }
 }
-
+body > main > div > section > div.container > div > div:nth-child(3) > div > div.card-action > button > a,
+body > main > div > section > div.container > div > div:nth-child(2) > div > div.card-action > button > a {
+  color:white;
+}
 // Masquerade alert shouldn't have a bottom margin
 body > .alert {
   margin-bottom: 0;
 }
-
 .jumbotron {
   background:#f5f2f2;
   padding-top: 20px;

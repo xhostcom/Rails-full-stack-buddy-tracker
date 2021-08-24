@@ -23,7 +23,7 @@ authenticate :user, lambda { |u| u.admin? } do
     root to: "dashboard#show"
   end
 end
-
+  get "/browse" => "browse#browse", as: :browse
   resources :notifications, only: [:index]
   resources :announcements, only: [:index]
   devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }

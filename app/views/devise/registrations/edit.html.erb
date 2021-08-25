@@ -38,6 +38,14 @@
         <p class="form-text text-muted"><small>We need your current password to confirm your changes</small></p>
       </div>
 
+       <div class="mb-3">
+        <%= f.label :images, class: "form-label" %>
+        <%= f.file_field :images, accept:'image/*', multiple: true %>
+      </div>
+
+      <% if resource.images.attached? %>
+      <% resource.images.each do |image| %>
+         <%= image_tag image, width: "200" %>
       <div class="mb-3 d-grid">
         <%= f.submit "Save Changes", class: 'btn btn-lg btn-primary' %>
       </div>

@@ -30,10 +30,9 @@ document.addEventListener("turbo:load", () => {
 // Slides
 $(document).ready(function () {
   console.log('It Works!')
-  //var slides = $('#slides .slide');
- // var currentSlide = 0;
   let $activeSlide = $('slides .slide:first-child');
-  $activeSlide.addClass("showing");
+  //$activeSlide.addClass("showing");
+
   $('#decline').on('click', function() {
     goToSlide('decline')
   })
@@ -46,20 +45,14 @@ $(document).ready(function () {
 
     // Send data to controller
     if(action == "approve") {
-      console.log('')
-    } else {
-
+      console.log('Approved!')
+    }else if (action == "decline") {
+      console.log('Trashed')
+    
     }
    
     $activeSlide.addClass("showing");
 
   }
-  function previousSlide() {
-    goToSlide(currentSlide - 1);
-  }
-  function goToSlide(n) {
-    slides[currentSlide].className = 'slide';
-    currentSlide = (n + slides.length)%slides.length;
-    slides[currentSlide].className = 'slide showing';
-  }
+
 });

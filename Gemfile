@@ -72,3 +72,9 @@ gem 'sidekiq', '~> 6.2'
 gem 'sitemap_generator', '~> 6.1'
 gem 'whenever', require: false
 gem 'responders', github: 'heartcombo/responders'
+
+gem "trycourier", "~> 1.2"
+
+gem "sendgrid", "~> 1.2"
+
+gem "sendgrid-ruby", "~> 6.6"

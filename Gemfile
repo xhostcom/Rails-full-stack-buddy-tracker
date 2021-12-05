@@ -6,7 +6,7 @@ gem 'aws-sdk-s3', require: false
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.4', '>= 6.1.4.1'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3', '~> 1.4'
+gem 'pg'
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
 # Use SCSS for stylesheets
@@ -72,8 +72,6 @@ gem 'sidekiq', '~> 6.2'
 gem 'sitemap_generator', '~> 6.1'
 gem 'whenever', require: false
 gem 'responders', github: 'heartcombo/responders'
-
-gem "trycourier", "~> 1.2"
 
 gem "sendgrid", "~> 1.2"
 

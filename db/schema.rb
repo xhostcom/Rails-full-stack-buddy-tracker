@@ -12,11 +12,14 @@
 
 ActiveRecord::Schema.define(version: 2021_08_23_202901) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
-    t.integer "record_id", null: false
-    t.integer "blob_id", null: false
+    t.bigint "record_id", null: false
+    t.bigint "blob_id", null: false
     t.datetime "created_at", null: false
     t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
     t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
@@ -35,7 +38,7 @@ ActiveRecord::Schema.define(version: 2021_08_23_202901) do
   end
 
   create_table "active_storage_variant_records", force: :cascade do |t|
-    t.integer "blob_id", null: false
+    t.bigint "blob_id", null: false
     t.string "variation_digest", null: false
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
@@ -62,7 +65,7 @@ ActiveRecord::Schema.define(version: 2021_08_23_202901) do
 
   create_table "notifications", force: :cascade do |t|
     t.string "recipient_type", null: false
-    t.integer "recipient_id", null: false
+    t.bigint "recipient_id", null: false
     t.string "type", null: false
     t.json "params"
     t.datetime "read_at"
@@ -73,7 +76,7 @@ ActiveRecord::Schema.define(version: 2021_08_23_202901) do
   end
 
   create_table "services", force: :cascade do |t|
-    t.integer "user_id", null: false
+    t.bigint "user_id", null: false
     t.string "provider"
     t.string "uid"
     t.string "access_token"
@@ -97,6 +100,10 @@ ActiveRecord::Schema.define(version: 2021_08_23_202901) do
     t.datetime "last_sign_in_at"
     t.string "current_sign_in_ip"
     t.string "last_sign_in_ip"
+    t.string "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string "unconfirmed_email"
     t.string "username", default: "", null: false
     t.string "first_name"
     t.string "last_name"
